@@ -1,0 +1,740 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/jpcoffelt/failfaultfix>
+
+
+AnnotationProperty: rdfs:comment
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#compromises>
+
+    Annotations: 
+        rdfs:comment "compromises(F, C) is used when fault F compromises component C."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isCompromisedBy>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#fixes>
+
+    Annotations: 
+        rdfs:comment "fixes(F1, F2) is used when fix F1 fixes fault F2."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isFixedBy>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isCompromisedBy>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#compromises>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isFixedBy>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#fixes>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isProvidedBy>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#provides>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRequiredByAT>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#requiresTA>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRequiredByCA>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#requiresAC>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRequiredByTG>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#requiresGT>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRiskOf>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#risks>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#provides>
+
+    Annotations: 
+        rdfs:comment "provides(C1, C2) is used when component C1 provides capability C2."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Component>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Capability>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isProvidedBy>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#requiresAC>
+
+    Annotations: 
+        rdfs:comment "requiresAC(A, C) is used to specify the capability C that must be completed in order to perform action A."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Action>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Component>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRequiredByCA>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#requiresGT>
+
+    Annotations: 
+        rdfs:comment "requiresGT(G, T) is used to specify the task T that must be completed in order to satsify goal G."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Goal>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Task>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRequiredByTG>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#requiresTA>
+
+    Annotations: 
+        rdfs:comment "requiresTA(T, A) is used to specify the (low-level) action A that must be performed in order to complete (high-level) task T."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Task>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Action>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRequiredByAT>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#resultsFrom>
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#resultsIn>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#resultsIn>
+
+    Annotations: 
+        rdfs:comment "resultsIn(F1, F2) is used when fault F1 results in failure F2."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#resultsFrom>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/jpcoffelt/failfaultfix#risks>
+
+    Annotations: 
+        rdfs:comment "risks(F1, F2) is used when fix F1 risks fault F2."@en
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    Range: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#isRiskOf>
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Action1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Action>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Action>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorControllerFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorControllerFix>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorEfficiencyFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFluctuationFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorHardware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorHardware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorHardware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorLossFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorReductionFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorSoftware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorSoftware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorSoftware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorStateFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#ActuatorFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Air1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#AirComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#AirComponent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CalibrationFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CalibrationFix>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Capability1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Capability>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Capability>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CapabilityFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationFix>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationHardware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationHardware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationHardware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationSoftware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationSoftware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationSoftware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Component>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#DisturbanceFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#DriverFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#DriverFix>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentComponent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Component>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentLocomotionFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentLocomotionFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentalFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentNavigationFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentNavigationFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentalFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentPerceptionFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentPerceptionFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentalFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentalFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#FirmwareFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Goal1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Goal>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Goal2>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Goal1>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Goal>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareComponent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Component>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareDisturbanceFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#DisturbanceFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#CapabilityFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#IsolatedCommunicationFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#IsolatedPowerFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Land1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#LandComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#LandComponent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Failure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerHardware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerHardware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerHardware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerSoftware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerSoftware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerSoftware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorHardware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorHardware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorHardware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#HardwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorProcessedDataFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorProcessorFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorProcessorFix>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorRawDataFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorSoftware1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorSoftware>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SensorSoftware>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareComponent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Component>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareDesignFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareDisturbanceFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#DisturbanceFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareDisturbanceFix>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fix>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareEfficiencyFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareExecutionFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareExecutionFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#CapabilityFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Fault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareQualityFailure>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#SoftwareFailure>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SystemicCommunicationFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#CommunicationFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#SystemicPowerFault>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#PowerFault>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Task1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#Task>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Task>
+
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#Water1>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#WaterComponent>
+    
+    
+Class: <http://www.semanticweb.org/jpcoffelt/failfaultfix#WaterComponent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/jpcoffelt/failfaultfix#EnvironmentComponent>
+    
+    
